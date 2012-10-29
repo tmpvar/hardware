@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>oscdial - demo</title>
+  <script type="text/javascript" src="binary.js"></script>
+</head>
+<body>
+
+<script>
+
+  var context = new webkitAudioContext(),
+  oscillator = context.createOscillator();
+  oscillator.type = 2;
+
+  var play = function(freq) {
+    if (freq) {
+      oscillator.frequency.value = freq;
+    }
+
+    oscillator.connect(context.destination);
+    oscillator.noteOn(0);
+    console.log('play', freq);
+  }
+
+  document.addEventListener('keydown', function(ev) {
+    // g
+    if (ev.keyCode === 71) {
+      play();
+    }
+  });
+
+  document.addEventListener('keyup', function(ev) {
+    // g
+    if (ev.keyCode === 71) {
+      oscillator.disconnect();
+    }
+  });
+
+  (new BinaryClient('ws://localhost:10001')).on('stream', function(stream) {
+    stream.on('data', function(d) {
+      console.log(d, parseInt(d, 10));
+      play(parseInt(d, 10)*2)
+    });
+  });
+
+</script>
+</body>
+</html>

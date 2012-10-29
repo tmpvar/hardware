@@ -1,0 +1,20 @@
+{
+  "name": "oscdial",
+  "version": "0.0.1",
+  "description": "controll a waveform with a homemade hardware knob",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tmpvar/oscdial.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "binaryjs": "https://github.com/tmpvar/binaryjs/tarball/nodelike",
+    "serialport": "~1.0.8",
+    "ecstatic": "~0.1.6"
+  }
+}
