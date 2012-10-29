@@ -9,7 +9,7 @@ The electronics behind this hack are quite simple. Albeit you may not have every
  * ball bearings (http://www.ebay.com/itm/ws/eBayISAPI.dll?ViewItem&item=180865214510&ssPageName=ADME:L:OC:US:3160)
  * m6 socket cap nuts and bolts (http://mcmaster.com or your local hardware store)
  * OPB706 (http://octopart.com/parts/search?q=OPB706C) x 2 
- * laser priter compatible transparencies
+ * laser printer compatible transparencies (and laser printer)
  * cat5 cable or a bunch of different colored wire
  * 2 resistors (~50ohm) almost any value should work ok
  * wood. doesn't have to be in the same same shape as the video as long as you can make 2 peices spin independently of each other
