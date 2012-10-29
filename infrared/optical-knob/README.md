@@ -4,7 +4,7 @@ video demo: http://www.youtube.com/embed/K9jOTFbbufA
 
 ## hardware
 
-The electronics behind this hack are quite simple. Albeit you may not have everything on hand to build this straight away.  To help, here's a shopping list
+The mechanics behind this hack are quite simple. Albeit you may not have everything on hand to build this straight away.  To help, here's a shopping list
 
  * ball bearings (http://www.ebay.com/itm/ws/eBayISAPI.dll?ViewItem&item=180865214510&ssPageName=ADME:L:OC:US:3160)
  * m6 socket cap nuts and bolts (http://mcmaster.com or your local hardware store)
