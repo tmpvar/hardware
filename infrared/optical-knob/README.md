@@ -110,3 +110,55 @@ serialport.list(function(err, sps) {
 ```
 
 see: https://github.com/tmpvar/hardware/tree/master/infrared/optical-knob/demo for the demo used in the video
+
+## GCODE
+
+If you happen to have access to a cnc machine and want to cut the mdf parts out, here's a the gcode generator that I used with a 1/4" bit.
+
+```javascript
+
+var gcode = [];
+var feed = 10000;
+var zfeed = 1000;
+
+
+function generateCircle(diameter, startz, endz) {
+  var radius = diameter / 2;
+  gcode.push('G1 Z0 F1000');
+
+  gcode.push('G1 X-' + radius + 'F' + feed);
+  for (var i=startz; i<endz; i+=2) {
+
+    gcode.push(['G1', 'Z' + i, 'F' + zfeed].join(' '));
+    gcode.push('G02' +  'X0. Y' + radius + ' I' + radius + ' J0. F' + feed);
+    gcode.push('G02' +  'X' + radius + 'Y0. I0. J-' + radius);
+    gcode.push('G02' +  'X0. Y-' + radius + ' I-' + radius + ' J0');
+    gcode.push('G02' +  'X-' + radius + ' Y0. I0. J' + radius);
+
+  }
+
+  gcode.push('G1 Z0 F1000');
+  gcode.push('G1 Y0 X0 F10000');
+
+
+}
+
+/*
+cap
+generateCircle(10, 0, 1+25.4*(1/4));
+generateCircle(20, 0, 1+25.4*(1/2));
+generateCircle(30, 0, 1+25.4*(1/2));
+generateCircle(50, 0, 1+25.4*(3/4));
+*/
+generateCircle(40, 0, 1+25.4*(3/8));
+generateCircle(50, 0, 1+25.4*(3/4));
+
+
+gcode.push('G1 Z20.05 F' + zfeed);
+gcode.push('G1 Z0 F' + zfeed);
+
+
+console.log(gcode.join('\n'));
+
+
+```
