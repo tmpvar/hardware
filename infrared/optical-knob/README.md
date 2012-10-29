@@ -1,13 +1,13 @@
 # optical knob
 
-<iframe width="560" height="315" src="http://www.youtube.com/embed/K9jOTFbbufA" frameborder="0" allowfullscreen></iframe>
+video demo: http://www.youtube.com/embed/K9jOTFbbufA
 
 ## hardware
 
 The electronics behind this hack are quite simple. Albeit you may not have everything on hand to build this straight away.  To help, here's a shopping list
 
  * ball bearings (http://www.ebay.com/itm/ws/eBayISAPI.dll?ViewItem&item=180865214510&ssPageName=ADME:L:OC:US:3160)
- * m6 socket cap nuts and bolts (
+ * m6 socket cap nuts and bolts (http://mcmaster.com or your local hardware store)
  * OPB706 (http://octopart.com/parts/search?q=OPB706C) x 2 
  * laser priter compatible transparencies
  * cat5 cable or a bunch of different colored wire
@@ -108,3 +108,5 @@ serialport.list(function(err, sps) {
 });
 
 ```
+
+see: https://github.com/tmpvar/hardware/tree/master/infrared/optical-knob/demo for the demo used in the video
